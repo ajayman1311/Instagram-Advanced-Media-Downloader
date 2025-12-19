@@ -1,0 +1,47 @@
+/* Container that holds the button */
+.my-overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Let clicks pass through so you can pause/play */
+  z-index: 2147483647; /* MAX INT VALUE: Ensures it is ALWAYS on top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Show button when hovering over the container */
+.my-overlay-container:hover {
+  background-color: rgba(0,0,0,0.1); /* Subtle dimming */
+}
+
+/* The Button itself */
+.my-download-popup {
+  pointer-events: auto; /* Re-enable clicking for just the button */
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-size: 14px;
+  opacity: 0; /* Hidden until you hover */
+  transform: scale(0.9);
+  transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* Make button appear on hover */
+.my-overlay-container:hover .my-download-popup {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.my-download-popup:hover {
+  background-color: #efefef;
+  transform: scale(1.1);
+}

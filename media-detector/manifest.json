@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Insta Magic Downloader",
+  "version": "5.0",
+  "permissions": [
+    "activeTab", 
+    "scripting", 
+    "downloads", 
+    "webRequest"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"]
+    }
+  ]
+}
